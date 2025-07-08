@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8771C3BE-A6C6-41BA-9D40-9EC2418800BA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MilaTerminal</RootNamespace>
+    <AssemblyName>MilaTerminal</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\LobbyByMilaHosting\LobbyByMilaHosting\libraries\LibreriasOrigin\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="com.rlabrecque.steamworks.net">
+      <HintPath>..\..\LobbyByMilaHosting\LobbyByMilaHosting\libraries\LibreriasOrigin\com.rlabrecque.steamworks.net.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB.v5.0.16.0">
+      <HintPath>..\..\LobbyByMilaHosting\LobbyByMilaHosting\libraries\LiteDB.v5.0.16.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LobbyByMilaHosting\LobbyByMilaHosting\libraries\LibreriasOrigin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Rocket.API">
+      <HintPath>..\..\LobbyByMilaHosting\LobbyByMilaHosting\libraries\LibreriasOrigin\Rocket.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Rocket.Core">
+      <HintPath>..\..\LobbyByMilaHosting\LobbyByMilaHosting\libraries\LibreriasOrigin\Rocket.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Rocket.Unturned">
+      <HintPath>..\..\LobbyByMilaHosting\LobbyByMilaHosting\libraries\LibreriasOrigin\Rocket.Unturned.dll</HintPath>
+    </Reference>
+    <Reference Include="SDG.NetTransport">
+      <HintPath>..\..\LobbyByMilaHosting\LobbyByMilaHosting\libraries\LibreriasOrigin\SDG.NetTransport.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\LobbyByMilaHosting\LobbyByMilaHosting\libraries\LibreriasOrigin\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\LobbyByMilaHosting\LobbyByMilaHosting\libraries\LibreriasOrigin\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\LobbyByMilaHosting\LobbyByMilaHosting\libraries\LibreriasOrigin\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\RootCommand.cs" />
+    <Compile Include="Commands\SubCommands\CatSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\CdSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\DelFileSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\DelFolderSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\FindSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\HelpSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\ISubCommand.cs" />
+    <Compile Include="Commands\SubCommands\LoginSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\LogoutSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\LsSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\MkdirSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\MvSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\PasswdSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\UserAddSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\UserDelSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\UserListSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\UserModSubCommand.cs" />
+    <Compile Include="Commands\SubCommands\ZipSubCommand.cs" />
+    <Compile Include="Data\IDataProvider.cs" />
+    <Compile Include="Data\Providers\JsonDataProvider.cs" />
+    <Compile Include="Data\Providers\LiteDbDataProvider.cs" />
+    <Compile Include="MilaTerminal.cs" />
+    <Compile Include="MilaTerminalConfiguration.cs" />
+    <Compile Include="Models\PlayerSession.cs" />
+    <Compile Include="Models\UserData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\MessagingService.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
